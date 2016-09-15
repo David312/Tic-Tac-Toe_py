@@ -1,14 +1,15 @@
+from square import Square
 class Board(object):
     """
         This class represents the board of the game.
         Provides useful methods for its use.
     """
-    self.content = []
 
     def __init__(self):
         """
             Initializes the 3x3 board with empty squares
         """
+        self.content = []
         for i in range(1, 10):
             self.content.append(Square())
 
