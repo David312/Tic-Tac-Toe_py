@@ -1,2 +1,1 @@
-from square import Square
-from board import Board
+from game_core import GameCore
