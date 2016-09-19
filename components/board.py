@@ -20,7 +20,7 @@ class Board(object):
         :param value: value to set into the square
         :return: True if the operation was successfull
         """
-        if position not in range(1, 10) or value == ' ':
+        if position not in range(0, 9) or value == ' ':
             return False
         return self.content[position].fill(value)
 
@@ -32,13 +32,13 @@ class Board(object):
             square.reset()
 
     def __str__(self):
-        res = "   1  2  3 \n"
+        res = "X\Y 1  2  3 \n"
         for i in range(0,9):
             if i % 3 == 0:
                 if i == 0: # omg this is so bad...
-                    res += "1 "
+                    res += "1  "
                 else:
-                    res += str(i >> 1)+" "
+                    res += str(i >> 1)+"  "
             res += str(self.content[i])
             if i % 3 == 2:
                 res += '\n'
