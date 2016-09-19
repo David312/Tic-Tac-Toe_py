@@ -15,7 +15,7 @@ class GameCore(object):
 
     def _horizontal_line(self):
         for i in range(0,9,3):
-            if self.board.content[i] == '[ ]':
+            if self.board.content[i].content == ' ':
                 continue
             if self.board.content[i] == self.board.content[i+1] == self.board.content[i+2]:
                 return True
@@ -23,7 +23,7 @@ class GameCore(object):
 
     def _vertical_line(self):
         for i in range(0,3):
-            if self.board.content[i] == ' ':
+            if self.board.content[i].content == ' ':
                 continue
             if self.board.content[i] == self.board.content[i+3] == self.board.content[i+6]:
                 return True

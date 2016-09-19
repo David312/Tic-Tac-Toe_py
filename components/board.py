@@ -37,8 +37,10 @@ class Board(object):
             if i % 3 == 0:
                 if i == 0: # omg this is so bad...
                     res += "1  "
+                elif i == 3:
+                    res += "2  "
                 else:
-                    res += str(i >> 1)+"  "
+                    res += "3  "
             res += str(self.content[i])
             if i % 3 == 2:
                 res += '\n'

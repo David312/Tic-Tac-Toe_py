@@ -36,3 +36,6 @@ class Square(object):
 
     def __str__(self):
         return "["+self.content+"]"
+
+    def __eq__(self, other):
+        return type(self) == type(other) and self.content == other.content

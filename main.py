@@ -19,15 +19,15 @@ def main():
                     utils.to_position(x_coord,y_coord),
                     utils.to_value(game.current_player())
                 )
+        print game
         if game.has_winner():
-            print "Congratulations Player " + str(game.current_player()) + "you are the winner!"
+            print "Congratulations Player " + str(game.current_player()) + " you are the winner!"
         else:
             print "Nobody wins this time..."
         if ask_to_play_again():
-            if ask_to_reset():
-                game.reset()
-            else:
-                game.new_game()
+            game.new_game()
+        elif ask_to_reset():
+            game.reset()
         else:
             break
 
@@ -37,13 +37,13 @@ def ask_to_play_again():
     msgs = ["Would you like to play again? (y/n):"]
     opts = ["y","Y","n","N"]
     response = utils.get_input(msgs,opts)
-    return response in msgs[0:2]
+    return response in opts[0:2]
 
 def ask_to_reset():
-    msgs = ["Would you like to reset the score? (y/n):"]
+    msgs = ["Would you like to reset the game? (y/n):"]
     opts = ["y","Y","n","N"]
     response = utils.get_input(msgs,opts)
-    return response in msgs[0:2]
+    return response in opts[0:2]
 
 
 if __name__ == "__main__":
